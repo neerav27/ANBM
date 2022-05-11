@@ -4,6 +4,7 @@ import Share from "../share/Share";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { axiosInstance } from "../../config";
+import axios from "axios";
 
 export default function Feed({ username }) {
     const [posts, setPosts] = useState([])
