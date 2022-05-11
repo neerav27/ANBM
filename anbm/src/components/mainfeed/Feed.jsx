@@ -5,6 +5,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { axiosInstance } from "../../config";
 import axios from "axios";
+import Darkmode from 'darkmode-js';
+
+new Darkmode().showWidget();
+  
 
 export default function Feed({ username }) {
     const [posts, setPosts] = useState([])
