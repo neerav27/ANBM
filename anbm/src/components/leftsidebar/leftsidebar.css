@@ -1,5 +1,5 @@
 .leftsidebar{
-    flex: 2;
+    flex: 1.5;
     height: calc(100vh - 50px);
     overflow-y: scroll;
     position: sticky;
@@ -39,7 +39,8 @@
 }
 
 .leftsidebarInfoKey{
-    font-weight: 500;
+    font-weight: 400;
+    font-size: small;
     margin-left: 10px;
     margin-top: 50px;
     margin-bottom: 50px;

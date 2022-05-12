@@ -63,15 +63,15 @@ export default function Rightsidebar({ user }) {
                 <ul className="rightsidebarList">
                     <li className="rightsidebarListItem">
                         <FeaturedPlayList className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Suggested Columns</span>
+                        <span className="rightsidebarListItemText">Suggested Songs</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <Face className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Artists</span>
+                        <span className="rightsidebarListItemText">Trending Artists</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <MusicNote className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Songs</span>
+                        <span className="rightsidebarListItemText">Trending Songs</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <TrendingUp className="rightsidebarIcon" />
@@ -79,16 +79,17 @@ export default function Rightsidebar({ user }) {
                     </li>
                     <li className="rightsidebarListItem">
                         <Whatshot className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Trending Songs</span>
+                        <span className="rightsidebarListItemText">Location Based</span>
                     </li>
                 </ul>
                 <button className="rightsidebarButton">Show More</button>
                 <hr className="rightsidebarHr" />
+                {/* 
                 <ul className="rightsidebarFriendList">
                     {Users.map(u => (
                         <Suggest key={u.id} user={u} />
                     ))}
-                </ul>
+                </ul> */}
             </>
         );
     };
