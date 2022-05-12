@@ -1,8 +1,10 @@
 import "./share.css"
-import { PermMedia, Label, Room, EmojiEmotions, Cancel } from "@material-ui/icons"
+import { PermMedia, Label, Room, EmojiEmotions, Cancel, Notes, MusicNote, Person, LibraryMusic, LeakAdd } from "@material-ui/icons"
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
+
+
 
 export default function Share() {
   const { user } = useContext(AuthContext);
@@ -55,10 +57,10 @@ export default function Share() {
           </div>
         )}
         <form className="shareBottom" onSubmit={submitHandler}>
-          <div className="shareOptions">
+          <li className="shareOptions">
             <label htmlFor="file" className="shareOption">
-              <PermMedia htmlColor="tomato" className="shareIcon" />
-              <span className="shareOptionText">Photo or Video</span>
+              <MusicNote htmlColor="Red" className="shareIcon" />
+              <span className="shareOptionText">Name</span>
               <input
                 style={{ display: "none" }}
                 type="file"
@@ -67,19 +69,19 @@ export default function Share() {
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </label>
-            <div className="shareOption">
-              <Label htmlColor="blue" className="shareIcon" />
-              <span className="shareOptionText">Tag</span>
-            </div>
-            <div className="shareOption">
-              <Room htmlColor="green" className="shareIcon" />
-              <span className="shareOptionText">Location</span>
-            </div>
-            <div className="shareOption">
-              <EmojiEmotions htmlColor="goldenrod" className="shareIcon" />
-              <span className="shareOptionText">Feelings</span>
-            </div>
-          </div>
+            <li className="shareOption">
+              <Person htmlColor="DodgerBlue" className="shareIcon" />
+              <span className="shareOptionText">Artist</span>
+            </li>
+            <li className="shareOption">
+              <LibraryMusic htmlColor="DarkOrange" className="shareIcon" />
+              <span className="shareOptionText">Album</span>
+            </li>
+            <li className="shareOption">
+              <LeakAdd htmlColor="Gold" className="shareIcon" />
+              <span className="shareOptionText">Link</span>
+            </li>
+          </li>
           <button className="shareButton" type="submit">
             Share
           </button>

@@ -51,15 +51,11 @@
 .shareOption{
     display: flex;
     align-items: center;
-    margin-right: 15px;
+    margin-right: 50px;
     cursor: pointer;
     height: calc(50px);
 }
-.shareOption{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
+
 
 .shareIcon{
     font-size: 18px;
