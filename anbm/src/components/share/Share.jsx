@@ -25,7 +25,6 @@ export default function Share() {
       try {
         await axios.post("/upload", data)
       } catch (err) {
-        console.log(err)
       }
     }
 
@@ -36,14 +35,14 @@ export default function Share() {
     } catch (err) {
 
     }
-  }
+  };
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
           <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "profile/noAvatar.png"} alt="" />
           <input
-            placeholder={"what's in your mind" + user.username + "?"}
+            placeholder={"What would you like to say " + user.username + "?"}
             className="shareInput"
             ref={desc}
           />
