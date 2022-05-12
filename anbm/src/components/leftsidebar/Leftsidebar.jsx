@@ -43,7 +43,7 @@ export default function Leftsidebar() {
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Hard Rock:</span>
+                        <span className="leftsidebarInfoKey">#Hard Rock</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">

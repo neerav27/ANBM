@@ -44,12 +44,11 @@ export default function Share() {
         <div className="shareTop">
           <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "profile/noAvatar.png"} alt="" />
           <input
-            placeholder={"What would you like to say " + user.username + "?"}
+            placeholder={"What would you like to share today,  " + user.username + "?"}
             className="shareInput"
             ref={desc}
           />
         </div>
-        <hr className="shareHr" />
         {file && (
           <div className="shareImgContainer">
             <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
