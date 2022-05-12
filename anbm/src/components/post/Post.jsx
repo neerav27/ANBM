@@ -1,5 +1,5 @@
 import "./post.css"
-import { MoreVert, ThumbDown, ThumbUp, Comment, Save, Share } from "@material-ui/icons"
+import { MoreVert, ThumbDown, ThumbUp, Comment, Save, Share, MusicVideo, PowerSettingsNew } from "@material-ui/icons"
 import { useState, useEffect, useContext } from "react";
 import { format } from "timeago.js"
 import { Link } from "react-router-dom";
@@ -73,9 +73,11 @@ export default function Post({ post }) {
                     </div>
                     <div className="postLeftBottom">
                         <div className="play">
-                            <button className="playButton"> <img className="playImg" src="/assets/like.jpg" alt="" /></button>
+                            <button className="playButton">
+                                 <PowerSettingsNew style={{ fontSize: 30, backgroundColor: "" }} onClick={likeHandler}/>
+                                 </button>
                         </div>
-                        <span className="songLink">https://thelink.com</span>
+                        <span className="songLink"></span>
                     </div>
                 </div>
                 <div className="postRight">

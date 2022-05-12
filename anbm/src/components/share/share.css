@@ -39,7 +39,8 @@
 .shareBottom{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    margin-right: 10px;
+    justify-content:space-around;
 
 }
 
