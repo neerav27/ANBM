@@ -6,25 +6,72 @@ import { TrendingUp } from "@material-ui/icons";
 import { Whatshot } from "@material-ui/icons";
 import { Users } from "../../dummyData";
 import Suggest from "../suggest/Suggest";
+import Profile from "../../pages/profile/profile";
+import { useContext, useEffect } from "react";
+import {Add, Remove} from "@material-ui/icons";
+import { useState } from "react";
+import  {axios}  from "axios";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Rightsidebar({ user }) {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const [friends, setFriends] = useState([]);
+    const {user:currentUser, dispatch} = useContext(AuthContext);
+    const [followed, setFollowed] = useState(
+        currentUser.followings.includes(user?.id)
+      );
 
+    useEffect(()=>{
+        setFollowed(currentUser.followings.includes(user?.id))
+        
+    },[currentUser, user?.id]);
+
+    useEffect(()=>{
+        const getFriends = async () => {
+            try{
+                const friendList = await axios.get("/users/friends/" +user._id);
+                setFriends(friendList.data);
+            }catch(err){
+                console.log(err);
+            }
+        }; 
+        getFriends();
+     }, [user]);
+      
+
+     const handleClick = async () => {
+        try {
+          if (followed) {
+            await axios.put(`/users/${user._id}/unfollow`, {
+              userId: currentUser._id,
+            });
+            dispatch({ type: "UNFOLLOW", payload: user._id });
+          } else {
+            await axios.put(`/users/${user._id}/follow`, {
+              userId: currentUser._id,
+            });
+            dispatch({ type: "FOLLOW", payload: user._id });
+          }
+            setFollowed(!followed);
+        } catch (err) {
+        }
+      };
     const HomeRightbar = () => {
         return (
             <>
                 <ul className="rightsidebarList">
                     <li className="rightsidebarListItem">
                         <FeaturedPlayList className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Suggested Columns</span>
+                        <span className="rightsidebarListItemText">Suggested Songs</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <Face className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Artists</span>
+                        <span className="rightsidebarListItemText">Trending Artists</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <MusicNote className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Songs</span>
+                        <span className="rightsidebarListItemText">Trending Songs</span>
                     </li>
                     <li className="rightsidebarListItem">
                         <TrendingUp className="rightsidebarIcon" />
@@ -32,16 +79,17 @@ export default function Rightsidebar({ user }) {
                     </li>
                     <li className="rightsidebarListItem">
                         <Whatshot className="rightsidebarIcon" />
-                        <span className="rightsidebarListItemText">Trending Songs</span>
+                        <span className="rightsidebarListItemText">Location Based</span>
                     </li>
                 </ul>
                 <button className="rightsidebarButton">Show More</button>
                 <hr className="rightsidebarHr" />
+                {/* 
                 <ul className="rightsidebarFriendList">
                     {Users.map(u => (
                         <Suggest key={u.id} user={u} />
                     ))}
-                </ul>
+                </ul> */}
             </>
         );
     };
@@ -49,6 +97,12 @@ export default function Rightsidebar({ user }) {
     const ProfileRightbar = () => {
         return (
             <>
+            {user.username !== currentUser.username && (
+          <button className="rightbarFollowButton" onClick={handleClick}>
+            {followed ? "Unfollow" : "Follow"}
+            {followed ? <Remove /> : <Add />}
+          </button>
+            )}
                 <h4 className="rightsidebarTitle">Bio</h4>
                 <div className="rightsidebarInfo">
                     <div className="rightsidebarInfoItem">

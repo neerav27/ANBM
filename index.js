@@ -10,16 +10,13 @@ const postRoute = require("./routes/posts");
 const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
-dotenv.config(); 
+dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL,
-    { useNewUrlParser: true }
-    , () => {
-        console.log("Connected to MongoDB @ "+ process.env.MONGO_URL);
-    }
-)
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true }, () => {
+  console.log("Connected to MongoDB @ " + process.env.MONGO_URL);
+});
 
-app.use("/images", express.static(path.join(__dirname,"public/images")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 //middleware
 app.use(express.json());
@@ -29,33 +26,33 @@ app.use(cors());
 
 const storage = multer.diskStorage({
     destination:(reg,file,cb)=>{
-        cb(null,"/anbm-api/public/images");
+        cb(null,"public/images");
     },
     filename: (req,file,cb)=>{
-        cb(null, req.body.name);
+        cb(null,req.body.name);
     },
    
 });
 
-const upload = multer({storage});
-app.post("/api/upload", upload.single("file"), (req,res) => {
-    try{
-return res.status(200).json("file uploaded successfully.");
-    }catch(err){
-        console.log(err);
-    }
+const upload = multer({ storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  try {
+    return res.status(200).json("file uploaded successfully.");
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
-app.use(express.static(path.join(__dirname,"/anbm/build")));
+app.use(express.static(path.join(__dirname, "/anbm/build")));
 
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/anbm/build','index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/anbm/build", "index.html"));
 });
 
 app.listen(process.env.PORT || 8800, () => {
-    console.log("Backend sever is running!")
-}) 
+  console.log("Backend sever is running!");
+});

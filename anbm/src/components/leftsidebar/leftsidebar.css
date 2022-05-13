@@ -1,5 +1,5 @@
 .leftsidebar{
-    flex: 2;
+    flex: 1.5;
     height: calc(100vh - 50px);
     overflow-y: scroll;
     position: sticky;
@@ -16,6 +16,40 @@
     list-style: none;
 }
 
+.leftsidebarHr{
+    margin: 50px ;
+}
+
+.leftsidebarFriendList{
+    padding: 0;
+    margin: 10px;
+    margin-bottom: 40px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.leftsidebarInfo{
+    margin-bottom: 50px;
+    margin: 20px;
+}
+
+.leftsidebarInfoItem{
+    margin-bottom: 20px ;
+    cursor: pointer;
+}
+
+.leftsidebarInfoKey{
+    font-weight: 400;
+    font-size: small;
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+
+}
+.leftsidebarInfoValue{
+    font-weight: 300;
+}
 .leftsidebarListItem{
     display: flex;
     background: white;

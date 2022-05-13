@@ -25,8 +25,15 @@ export default function NavBar() {
             <div className="NavBarRight">
                 <div className="NavBarLinks">
                     <span className="NavBarLink1">Upload</span>
+                    <body>
+                        <button>Upload</button>
+                        <div></div>
+
+                    </body>
+                    
+
                     <Link to='/login' style={{ textDecoration: "none" }}>
-                        <span className="NavBarLink"> Login</span>
+                        <span className="NavBarLink"> Logout</span>
                     </Link>
                     <Link to='/register' style={{ textDecoration: "none" }}>
                         <span className="NavBarLink3"> Register</span>
