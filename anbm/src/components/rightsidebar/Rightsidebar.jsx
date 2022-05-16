@@ -19,13 +19,10 @@ export default function Rightsidebar({ user }) {
     const [friends, setFriends] = useState([]);
     const {user:currentUser, dispatch} = useContext(AuthContext);
     const [followed, setFollowed] = useState(
-        currentUser.followings.includes(user?.id)
+        currentUser.followings.includes(user?._id)
       );
 
-    useEffect(()=>{
-        setFollowed(currentUser.followings.includes(user?.id))
-        
-    },[currentUser, user?.id]);
+   
 
     useEffect(()=>{
         const getFriends = async () => {
@@ -98,7 +95,7 @@ export default function Rightsidebar({ user }) {
         return (
             <>
             {user.username !== currentUser.username && (
-          <button className="rightbarFollowButton" onClick={handleClick}>
+            <button className="rightbarFollowButton" onClick={handleClick}>
             {followed ? "Unfollow" : "Follow"}
             {followed ? <Remove /> : <Add />}
           </button>

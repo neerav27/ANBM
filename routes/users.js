@@ -118,9 +118,7 @@ router.put("/:id/unfollow", async (req, res) => {
     }
 });
 
-router.get("/",(req,res)=>{
-    res.send("hey its user route")
-})
+
 
 //delete user 
 //get a user

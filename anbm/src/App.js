@@ -3,6 +3,7 @@ import Home from "./pages/home/home/Home";
 import Login from "./pages/home/login/Login";
 import Register from "./pages/home/register/Register";
 import Profile from "./pages/profile/profile";
+import Share from "./pages/home/share/Share";
 import {
   BrowserRouter as Router,
   Route,
@@ -28,6 +29,11 @@ function App() {
           exact
           path="/register"
           element={user ? <Navigate to="/" replace /> : <Register />}
+        />
+        <Route
+          exact
+          path="/share"
+          element={user ? <Navigate to="/share" replace /> : <Share />}
         />
         <Route exact path="/profile/:username" element={<Profile />} />
       </Routes>

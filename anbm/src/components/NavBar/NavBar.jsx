@@ -8,6 +8,10 @@ export default function NavBar() {
 
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const open =document.getElementById('open');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close');
+
     console.log(user.username);
     return (
         <div className="NavBarContainer">
@@ -24,13 +28,12 @@ export default function NavBar() {
             </div>
             <div className="NavBarRight">
                 <div className="NavBarLinks">
-                    <span className="NavBarLink1">Upload</span>
-                    <body>
-                        <button>Upload</button>
-                        <div></div>
-
-                    </body>
-                    
+                    <span className="NavBarLink1">
+                    <Link to='/share' >
+                        <button class="Upload"> Upload</button>
+                    </Link>
+                    </span>
+                                 
 
                     <Link to='/login' style={{ textDecoration: "none" }}>
                         <span className="NavBarLink"> Logout</span>
