@@ -14,7 +14,6 @@ import { AuthContext } from "./context/AuthContext";
 function App() {
   const { user } = useContext(AuthContext);
   const envVar = process.env.REACT_APP_PUBLIC_FOLDER;
-  console.log(envVar);
   return (
     <Router>
       <Routes>
