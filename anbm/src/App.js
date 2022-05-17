@@ -3,7 +3,9 @@ import Home from "./pages/home/home/Home";
 import Login from "./pages/home/login/Login";
 import Register from "./pages/home/register/Register";
 import Profile from "./pages/profile/profile";
-import Share from "./pages/home/share/Share";
+import Popup from "./components/Popup";
+
+
 import {
   BrowserRouter as Router,
   Route,
@@ -15,8 +17,11 @@ import { AuthContext } from "./context/AuthContext";
 function App() {
   const { user } = useContext(AuthContext);
   const envVar = process.env.REACT_APP_PUBLIC_FOLDER;
+
   console.log(envVar);
+
   return (
+
     <Router>
       <Routes>
         <Route exact path="/" element={user ? <Home /> : <Register />} />
@@ -30,14 +35,11 @@ function App() {
           path="/register"
           element={user ? <Navigate to="/" replace /> : <Register />}
         />
-        <Route
-          exact
-          path="/share"
-          element={user ? <Navigate to="/share" replace /> : <Share />}
-        />
+
         <Route exact path="/profile/:username" element={<Profile />} />
       </Routes>
     </Router>
+
   );
 }
 

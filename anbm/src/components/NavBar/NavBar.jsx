@@ -2,15 +2,19 @@ import "./NavBar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import Popup from "../Popup";
+import Share from "../share/Share";
+
+
 
 export default function NavBar() {
 
     const { user } = useContext(AuthContext);
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-    const open =document.getElementById('open');
-    const modal_container = document.getElementById('modal_container');
-    const close = document.getElementById('close');
+    const [modalOpen, setModalOpen] = useState(false);
+    const [buttonPopup, setButtonPopup] = useState(false);
+
 
     console.log(user.username);
     return (
@@ -29,11 +33,17 @@ export default function NavBar() {
             <div className="NavBarRight">
                 <div className="NavBarLinks">
                     <span className="NavBarLink1">
-                    <Link to='/share' >
-                        <button class="Upload"> Upload</button>
-                    </Link>
+                        <main>
+                            <button onClick={() => setButtonPopup(true)}>
+                                Upload
+                            </button>
+                        </main>
+                        <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+                            <h3>My popup</h3>
+                        </Popup>
+
                     </span>
-                                 
+
 
                     <Link to='/login' style={{ textDecoration: "none" }}>
                         <span className="NavBarLink"> Logout</span>
@@ -58,7 +68,7 @@ export default function NavBar() {
                 </div>
                 <Link to={`/profile/${user.username}`}>
                     <img
-                        src={user.profilePicture 
+                        src={user.profilePicture
                             ? PF + user.profilePicture
                             : PF + "profile/noAvatar.png"
                         }
