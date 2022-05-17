@@ -26,6 +26,8 @@
 .shareInput{
     border: none;
     width: 80%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.278);
 }
 
 .shareInput:focus{
@@ -76,7 +78,7 @@
     font-weight: 500;   
     margin-right: 20px;
     cursor: pointer;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .shareImgContainer{
