@@ -6,7 +6,7 @@ import { useContext, useState, useRef } from "react";
 import Popup from "../Popup";
 import Share from "../share/Share";
 import { PermMedia, Label, Room, EmojiEmotions, Cancel, Notes, MusicNote, LibraryMusic, LeakAdd } from "@material-ui/icons"
-
+import { axiosInstance, AxiosInstance } from "../../config";
 
 export default function NavBar() {
   const handleClick = (e) => {
@@ -20,7 +20,28 @@ export default function NavBar() {
     const [file, setFile] = useState(null);
     const desc = useRef();
 
-    console.log(user.username);
+    const submitHandler = async (e) => {
+      e.preventDefault();
+      const newPost = {
+        userId: user._id,
+        desc: desc.current.value,
+      };
+      if (file) {
+        const data = new FormData();
+        const fileName = Date.now() + file.name;
+        data.append("file", file);
+        data.append("name", fileName);
+        newPost.img = fileName;
+        try {
+          await axiosInstance.post("/upload", data);
+        } catch (err) {}
+      }
+  
+      try {
+        await axiosInstance.post("/posts", newPost);
+        window.location.reload();
+      } catch (err) {}
+    };
     return (
         <div className="NavBarContainer">
             <div className="NavBarLeft">
@@ -92,12 +113,11 @@ export default function NavBar() {
 
 
 
-                    <Link to='/login' style={{ textDecoration: "none" }}>
-                        <span className="NavBarLink"> Logout</span>
-                    </Link>
-                    <Link to='/register' style={{ textDecoration: "none" }}>
-                        <span className="NavBarLink3"> Register</span>
-                    </Link>
+            <form className="logoutBox" onSubmit={handleClick} >
+              <span className="logoutButton" type="submit" >
+                <a href="/login" style={{ textDecoration: "none" }} >Logout</a>
+              </span>
+            </form>
                 </div>
                 <div className="NavBarIcons">
                     <div className="NavBarIconItems">
