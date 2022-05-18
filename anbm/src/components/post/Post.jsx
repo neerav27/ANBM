@@ -74,6 +74,7 @@ export default function Post({ post }) {
                     </div>
                     <div className="postLeftBottom">
                         <div className="play">
+                            
                             <button className="playButton">
                                  <PowerSettingsNew style={{ fontSize: 30, backgroundColor: "" }} onClick={likeHandler}/>
                                  </button>

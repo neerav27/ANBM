@@ -27,23 +27,23 @@ export default function Leftsidebar() {
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Hip hop </span>
+                        <span className="leftsidebarInfoKey">#Hip-hop </span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Art Punk</span>
+                        <span className="leftsidebarInfoKey">#ArtPunk</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#College Rock</span>
+                        <span className="leftsidebarInfoKey">#CollegeRock</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Folk Punk</span>
+                        <span className="leftsidebarInfoKey">#FolkPunk</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Hard Rock</span>
+                        <span className="leftsidebarInfoKey">#HardRock</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
@@ -51,35 +51,35 @@ export default function Leftsidebar() {
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#New Wave</span>
+                        <span className="leftsidebarInfoKey">#NewWave</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#African Blues</span>
+                        <span className="leftsidebarInfoKey">#AfricanBlues</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Chicago Blues</span>
+                        <span className="leftsidebarInfoKey">#ChicagoBlues</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Chamber Music</span>
+                        <span className="leftsidebarInfoKey">#ChamberMusic</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Contemporary Classical</span>
+                        <span className="leftsidebarInfoKey">#ContemporaryClassical</span>
                         <span className="leftsidebarInfoValue">  </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Parody Music</span>
+                        <span className="leftsidebarInfoKey">#ParodyMusic</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Alternative Country</span>
+                        <span className="leftsidebarInfoKey">#AlternativeCountry</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Australian Country</span>
+                        <span className="leftsidebarInfoKey">#AustralianCountry</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
@@ -87,7 +87,7 @@ export default function Leftsidebar() {
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Glitch Pop</span>
+                        <span className="leftsidebarInfoKey">#GlitchPop</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
@@ -95,7 +95,7 @@ export default function Leftsidebar() {
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">
-                        <span className="leftsidebarInfoKey">#Chicago House</span>
+                        <span className="leftsidebarInfoKey">#ChicagoHouse</span>
                         <span className="leftsidebarInfoValue"> </span>
                     </div>
                     <div className="leftsidebarInfoItem">

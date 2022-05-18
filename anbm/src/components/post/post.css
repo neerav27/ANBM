@@ -99,7 +99,7 @@
 .playButton{
     padding: 20px;
     border-radius: 100%;
-    border-width: 1px;
+    border-width: .5px;
     position:relative;
     left: 650%;
     margin-top:440%;
