@@ -9,9 +9,12 @@ import { PermMedia, Label, Room, EmojiEmotions, Cancel, Notes, MusicNote, Librar
 
 
 export default function NavBar() {
-
-    const { user } = useContext(AuthContext);
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const handleClick = (e) => {
+    e.preventDefault();
+    localStorage.clear("user");
+  };
+  const { user } = useContext(AuthContext);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const [modalOpen, setModalOpen] = useState(false);
     const [buttonPopup, setButtonPopup] = useState(false);
     const [file, setFile] = useState(null);
@@ -122,5 +125,6 @@ export default function NavBar() {
                 </Link>
             </div>
         </div>
-    )
+        
+  );
 }

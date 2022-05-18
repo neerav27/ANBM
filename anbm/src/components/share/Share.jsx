@@ -1,11 +1,23 @@
-import "./share.css"
-import { PermMedia, Label, Room, EmojiEmotions, Cancel, Notes, MusicNote, Person, LibraryMusic, LeakAdd } from "@material-ui/icons"
+import "./share.css";
+import {
+  PermMedia,
+  Label,
+  Room,
+  EmojiEmotions,
+  Cancel,
+  Notes,
+  MusicNote,
+  Person,
+  LibraryMusic,
+  LeakAdd,
+} from "@material-ui/icons";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import React from "react";
 
 
+import { axiosInstance, AxiosInstance } from "../../config";
 
 export default function Share() {
   const { user } = useContext(AuthContext);
@@ -14,38 +26,44 @@ export default function Share() {
   const [file, setFile] = useState(null);
 
   const submitHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const newPost = {
       userId: user._id,
-      desc: desc.current.value
-    }
+      desc: desc.current.value,
+    };
     if (file) {
       const data = new FormData();
       const fileName = Date.now() + file.name;
-      data.append("file", file)
+      data.append("file", file);
       data.append("name", fileName);
       newPost.img = fileName;
       try {
-        await axios.post("/upload", data)
-      } catch (err) {
-      }
+        await axiosInstance.post("/upload", data);
+      } catch (err) {}
     }
 
     try {
-
-      await axios.post("/posts", newPost)
-      window.location.reload()
-    } catch (err) {
-
-    }
+      await axiosInstance.post("/posts", newPost);
+      window.location.reload();
+    } catch (err) {}
   };
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "profile/noAvatar.png"} alt="" />
+          <img
+            className="shareProfileImg"
+            src={
+              user.profilePicture
+                ? PF + user.profilePicture
+                : PF + "profile/noAvatar.png"
+            }
+            alt=""
+          />
           <input
-            placeholder={"What would you like to share today,  " + user.username + "?"}
+            placeholder={
+              "What would you like to share today,  " + user.username + "?"
+            }
             className="shareInput"
             ref={desc}
           />
