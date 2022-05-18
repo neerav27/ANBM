@@ -53,7 +53,7 @@
 }
 .NavBarRight{
     margin-left: 10px;
-    flex: 3;
+    flex: 4;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -63,30 +63,28 @@
     cursor: pointer;
 }
 
-.NavBarLink{  /*login*/
-    margin-right: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
+.NavBarLinks{
+    display: flex;
 }
 
 .NavBarLink1{ /*upload*/
+    outline: none;
     margin-right: 10px;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
-    color: rgba(255, 127, 0, 0.89);
-    background-color: #d46300ed;
-    background-blend-mode: color;
-    border-radius: 20px;
-    
+    color: rgba(255, 145, 0, 0.89);
+    border-radius: none;
 }
 
-.NavBarLink3{ /*register*/
+.logoutButton{ /*logout*/
+    outline: none;
     margin-right: 10px;
-    font-size: 14px; 
+    font-size: 14px;
     cursor: pointer;
-    color: rgb(3, 3, 3);
+    color: rgba(255, 0, 149, 0.89);
+    border-radius: none;
 }
+
 
 .NavBarIcons{
     display: flex;
@@ -122,15 +120,3 @@ color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
-.logoutButton{ /*logout*/
-    outline: none;
-    margin-right: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    color: rgba(255, 0, 149, 0.89);
-    border-radius: none;
-}
-
-.darkmode-layer, .darkmode-toggle {
-    z-index: 500;
-  }
