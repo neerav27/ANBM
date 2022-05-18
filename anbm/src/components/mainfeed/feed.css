@@ -6,18 +6,7 @@
     padding: 20px;
 }
 
-.darkmode--activated p, .darkmode--activated li {
-    color: rgba(0, 0, 0, 0.515);
-  }
 
-  .button {
-    isolation: isolate;
-  }
-  
-  .darkmode--activated .logo {
-    mix-blend-mode: difference;
-  }
-
-  .darkmode-layer, .darkmode-toggle {
+.darkmode-layer, .darkmode-toggle {
   z-index: 500;
 }

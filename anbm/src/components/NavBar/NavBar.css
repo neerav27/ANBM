@@ -131,4 +131,6 @@ color: rgb(0, 0, 0);
     border-radius: none;
 }
 
-
+.darkmode-layer, .darkmode-toggle {
+    z-index: 500;
+  }

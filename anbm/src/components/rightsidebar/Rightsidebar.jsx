@@ -140,6 +140,7 @@ export default function Rightsidebar({ user }) {
         </div>
         <h4 className="rightsidebarTitle">Top Songs</h4>
         <div className="rightsidebarFollowings">
+          
           <div className="rightsidebarFollowing">
             <img
               src={`${PF}profile/photo1.jpg`}
