@@ -74,10 +74,10 @@
     margin-right: 10px;
     font-size: 18px;
     cursor: pointer;
-    color: rgba(2, 1, 1, 0.89);
-    background-color: #473d3498;
+    color: rgba(255, 127, 0, 0.89);
+    background-color: #d46300ed;
     background-blend-mode: color;
-    border-radius: 8px;
+    border-radius: 20px;
     
 }
 
