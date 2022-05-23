@@ -5,6 +5,8 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useRef } from "react";
 import Popup from "../Popup";
 import Share from "../share/Share";
+
+
 import {
   PermMedia,
   Label,
@@ -64,8 +66,11 @@ export default function NavBar() {
           <Search className="searchIcon" />
           <input
             placeholder="Search for friends, songs, or artists"
-            className="searchInput"
-          />
+            className="searchInput"/>
+            <ul className="list">
+              
+
+            </ul>
         </div>
       </div>
       <div className="NavBarRight">

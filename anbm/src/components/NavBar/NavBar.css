@@ -120,3 +120,15 @@ color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
+.list{
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.listItem{
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #444;
+    font-weight: 300;
+}
