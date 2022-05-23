@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useRef } from "react";
 import Popup from "../Popup";
-import Share from "../share/Share";
-
 
 import {
   PermMedia,
@@ -31,12 +29,14 @@ export default function NavBar() {
   const [buttonPopup, setButtonPopup] = useState(false);
   const [file, setFile] = useState(null);
   const desc = useRef();
+  const url = useRef();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
+      img: url.current.value,
     };
     if (file) {
       const data = new FormData();
@@ -66,11 +66,9 @@ export default function NavBar() {
           <Search className="searchIcon" />
           <input
             placeholder="Search for friends, songs, or artists"
-            className="searchInput"/>
-            <ul className="list">
-              
-
-            </ul>
+            className="searchInput"
+          />
+          <ul className="list"></ul>
         </div>
       </div>
       <div className="NavBarRight">
@@ -98,6 +96,11 @@ export default function NavBar() {
                   }
                   className="shareInput"
                   ref={desc}
+                />
+                <input
+                  placeholder={"Youtube url"}
+                  className="urlInput"
+                  ref={url}
                 />
               </div>
               <form className="shareBottom" onSubmit={submitHandler}>
