@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useRef } from "react";
 import Popup from "../Popup";
@@ -16,45 +16,45 @@ import {
   LibraryMusic,
   LeakAdd,
 } from "@material-ui/icons";
-import { axiosInstance, AxiosInstance } from "../../config";
+import { axiosInstance } from "../../config";
 
 export default function NavBar() {
+  const [user, setUser] = useState({});
+
   const handleClick = (e) => {
     e.preventDefault();
     localStorage.clear("user");
   };
-  const { user } = useContext(AuthContext);
+  const { user: currentUser } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [modalOpen, setModalOpen] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const [file, setFile] = useState(null);
   const desc = useRef();
   const url = useRef();
+  const friendID = useRef();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const newPost = {
-      userId: user._id,
+      userId: currentUser._id,
       desc: desc.current.value,
       img: url.current.value,
     };
-    /*
-    if (file) {
-      const data = new FormData();
-      const fileName = Date.now() + file.name;
-      data.append("file", file);
-      data.append("name", fileName);
-      newPost.img = fileName;
-      try {
-        await axiosInstance.post("/upload", data);
-      } catch (err) {}
-    }
-    */
-
     try {
       await axiosInstance.post("/posts", newPost);
       window.location.reload();
     } catch (err) {}
+  };
+  const searchHandler = () => {
+    console.log(friendID.current.value);
+    const fetchUser = async () => {
+      const res = await axiosInstance.get(
+        `/users?userId=${friendID.current.value}`
+      );
+      setUser(res.data);
+    };
+    fetchUser();
   };
   return (
     <div className="NavBarContainer">
@@ -69,7 +69,12 @@ export default function NavBar() {
           <input
             placeholder="Search for friends, songs, or artists"
             className="searchInput"
+            ref={friendID}
           />
+          <Link to={`/profile/${user.username}`}>
+            <button onClick={searchHandler}>Search</button>
+          </Link>
+
           <ul className="list"></ul>
         </div>
       </div>
@@ -84,8 +89,8 @@ export default function NavBar() {
                 <img
                   className="shareProfileImg"
                   src={
-                    user.profilePicture
-                      ? PF + user.profilePicture
+                    currentUser.profilePicture
+                      ? PF + currentUser.profilePicture
                       : PF + "profile/noAvatar.png"
                   }
                   alt=""
@@ -93,7 +98,7 @@ export default function NavBar() {
                 <input
                   placeholder={
                     "What amazing music would you like to share today,  " +
-                    user.username +
+                    currentUser.username +
                     "?"
                   }
                   className="shareInput"
@@ -157,11 +162,11 @@ export default function NavBar() {
             <span className="NavBarIconBadge">1.0k</span>
           </div>
         </div>
-        <Link to={`/profile/${user.username}`}>
+        <Link to={`/profile/${currentUser.username}`}>
           <img
             src={
-              user.profilePicture
-                ? PF + user.profilePicture
+              currentUser.profilePicture
+                ? PF + currentUser.profilePicture
                 : PF + "profile/noAvatar.png"
             }
             alt=""
