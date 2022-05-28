@@ -5,6 +5,7 @@
     "font-src": ["'self'", "*"],
     "style-src": ["'self'", "https://*.googleapis.com", "'unsafe-inline'"],
     "connect-src": ["'self'", "*"],
-    "img-src": ["'self'", "*"]
+    "img-src": ["'self'", "*"],
+    "frame-src": ["'youtube.com ", "https://*.youtube.com/*'"]
   }
 }
