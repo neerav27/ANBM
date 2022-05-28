@@ -1,6 +1,7 @@
 {
   "prod": {
-    "default-src": "'self'",
+    "default-src": ["*"],
+    "script-src-elem": ["*"],
     "script-src": ["*"],
     "font-src": ["'self'", "*"],
     "style-src": ["*"],
