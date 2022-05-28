@@ -6,6 +6,6 @@
     "style-src": ["'self'", "https://*.googleapis.com", "'unsafe-inline'"],
     "connect-src": ["'self'", "*"],
     "img-src": ["'self'", "*"],
-    "frame-src": ["'youtube.com ", "https://*.youtube.com/*'"]
+    "child-src": ["https://www.youtube.com/iframe_api"]
   }
 }
