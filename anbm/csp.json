@@ -3,7 +3,7 @@
     "default-src": "'self'",
     "script-src": ["*"],
     "font-src": ["'self'", "*"],
-    "style-src": ["'self'", "https://*.googleapis.com", "'unsafe-inline'"],
+    "style-src": ["*"],
     "connect-src": ["'self'", "*"],
     "img-src": ["'self'", "*"],
     "child-src": ["*"]
