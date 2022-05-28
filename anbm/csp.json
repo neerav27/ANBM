@@ -1,11 +1,11 @@
 {
   "prod": {
     "default-src": "'self'",
-    "script-src": ["'self'", "https://www.youtube.com/iframe_api"],
+    "script-src": ["*"],
     "font-src": ["'self'", "*"],
     "style-src": ["'self'", "https://*.googleapis.com", "'unsafe-inline'"],
     "connect-src": ["'self'", "*"],
     "img-src": ["'self'", "*"],
-    "child-src": ["https://www.youtube.com/iframe_api"]
+    "child-src": ["*"]
   }
 }
