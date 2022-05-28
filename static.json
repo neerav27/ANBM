@@ -1,6 +1,6 @@
 {
   "headers": {
-    "/**": {
+    "/": {
       "Content-Security-Policy": "default-src 'self'; script-src-elem * https://www.youtube.com/iframe_api; script-src * 'unsafe-inline'; img-src * 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; "
     }
   }
