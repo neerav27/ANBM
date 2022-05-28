@@ -1,7 +1,7 @@
 {
   "prod": {
     "default-src": "'self'",
-    "script-src": ["'self'", "https://*.youtube.com/*"],
+    "script-src": ["'self'", "'https://www.youtube.com/iframe_api/*'"],
     "font-src": ["'self'", "*"],
     "style-src": ["'self'", "https://*.googleapis.com", "'unsafe-inline'"],
     "connect-src": ["'self'", "*"],
