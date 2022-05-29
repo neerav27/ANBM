@@ -88,9 +88,6 @@ export default function Post({ post }) {
               
             </div>
             <div className="video">
-              <div className="videoBack"> 
-
-              </div>
                <ReactPlayer url={post?.img} controls={true} /> 
             </div>
           </div>
