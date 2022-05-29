@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "netlify-cli": "^10.3.3",
     "react-csp": "^1.1.3"
   }
 }

@@ -1,6 +1,12 @@
 import "./NavBar.css";
-import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import { Link, Navigate } from "react-router-dom";
+import {
+  Search,
+  Person,
+  Chat,
+  Notifications,
+  Navigation,
+} from "@material-ui/icons";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useContext, useState, useRef } from "react";
 import Popup from "../Popup";
@@ -20,7 +26,7 @@ import { axiosInstance } from "../../config";
 
 export default function NavBar() {
   const [user, setUser] = useState({});
-
+  let navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
     localStorage.clear("user");
@@ -47,12 +53,15 @@ export default function NavBar() {
     } catch (err) {}
   };
   const searchHandler = () => {
+    console.log(user);
     console.log(friendID.current.value);
     const fetchUser = async () => {
+      console.log(user);
       const res = await axiosInstance.get(
         `/users?userId=${friendID.current.value}`
       );
       setUser(res.data);
+      console.log(user);
     };
     fetchUser();
   };
