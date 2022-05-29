@@ -10,6 +10,7 @@ import {
   PowerSettingsNew,
   Favorite,
   Info,
+  Send,
 } from "@material-ui/icons";
 import { useState, useEffect, useContext } from "react";
 import { format } from "timeago.js";
@@ -88,7 +89,7 @@ export default function Post({ post }) {
             </div>
             <div className="video">
               <div className="videoBack"> 
-              
+
               </div>
                <ReactPlayer url={post?.img} controls={true} /> 
             </div>
@@ -120,7 +121,7 @@ export default function Post({ post }) {
               <span className="interactButtonText"></span>
             </div>
             <div className="interactButton">
-              <Share style={{ fontSize: 30 }} />
+              <Send style={{ fontSize: 30 }} />
               <span className="interactButtonText"></span>
             </div>
             <div className="interactButton">

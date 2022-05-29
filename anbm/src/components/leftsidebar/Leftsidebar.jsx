@@ -1,5 +1,5 @@
 import "./leftsidebar.css"
-import {Save} from "@material-ui/icons";
+import {Favorite, Save} from "@material-ui/icons";
 import {Home} from "@material-ui/icons";
 import {ViewColumn} from "@material-ui/icons";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function Leftsidebar() {
                     </Link>
                   </div>
                     <div className="leftsidebarListItem">
-                        <Save className="leftsidebarIcon"/>
+                        <Favorite className="leftsidebarIcon"/>
                     <span className="leftsidebarListItemText">Saved Posts</span>
                   </div>
                   <div className="leftsidebarListItem">
