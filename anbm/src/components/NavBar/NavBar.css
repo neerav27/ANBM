@@ -33,7 +33,7 @@
     background-color: rgb(253, 253, 253);
     border-radius: 30px;
     display: flex;
-    align-items: center;
+    align-items:center;
 }
 
 .searchIcon{
@@ -41,6 +41,19 @@
     margin-left: 10px;
 }
 
+.searchBox{
+    margin-left: 15%;
+    background-color: #ff730000;
+
+}
+.searchParty{
+    border-width: 0px;
+    border-color: #9143049a;
+   font-size: medium;
+    border-radius: 20%;
+    font-weight: 200;
+    cursor: pointer;
+}
 .searchInput{
     border: none;
     width: 70%;
@@ -122,12 +135,30 @@ color: rgb(0, 0, 0);
 .list{
     padding: 0;
     list-style: none;
-    text-align: center;
+    text-align:center;
 }
 
 .listItem{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 18px;
     color: #444;
     font-weight: 300;
+}
+
+.urlInput{
+    display: flex;
+    margin-top: 5%;
+    background-color: #435c373b;
+    border-radius: 3%;
+    border-width: 0px;
+    height: 20px;
+    font-weight: 300;
+
+
+}
+
+.shareBottom{
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
 }

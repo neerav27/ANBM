@@ -44,7 +44,7 @@ export default function NavBar() {
     try {
       await axiosInstance.post("/posts", newPost);
       window.location.reload();
-    } catch (err) {}
+    } catch (err) { }
   };
   const searchHandler = () => {
     console.log(friendID.current.value);
@@ -71,10 +71,11 @@ export default function NavBar() {
             className="searchInput"
             ref={friendID}
           />
-          <Link to={`/profile/${user.username}`}>
-            <button onClick={searchHandler}>Search</button>
-          </Link>
-
+          <div className="searchBox">
+            <Link to={`/profile/${user.username}`}>
+              <button className="searchParty" onClick={searchHandler}>Search</button>
+            </Link>
+          </div>
           <ul className="list"></ul>
         </div>
       </div>
@@ -105,11 +106,7 @@ export default function NavBar() {
                   ref={desc}
                 />
 
-                <input
-                  placeholder={"Youtube url"}
-                  className="urlInput"
-                  ref={url}
-                />
+
               </div>
               <form className="shareBottom" onSubmit={submitHandler}>
                 <li className="shareOptions">
@@ -130,7 +127,16 @@ export default function NavBar() {
                   </li>
                   <li className="shareOption">
                     <LeakAdd htmlColor="Gold" className="shareIcon" />
-                    <span className="shareOptionText">Link</span>
+
+                    <main>
+                      <span className="shareOptionText">Link</span>
+                      <input
+                        placeholder={"Paste link here..."}
+                        className="urlInput"
+                        ref={url}
+                      />
+                    </main>
+
                   </li>
                 </li>
                 <button className="shareButton" type="submit">
