@@ -93,12 +93,10 @@
   width: 100%;
 }
 .video {
-  display:inline;
+ 
   margin-left: 25%;
   margin-top: 0%;
-  border-radius: 0;
-  width: 100%;
-  background-color: black;
+  
   
 }
 .playImg {
@@ -135,4 +133,12 @@
 }
 .postDislikeCounter{
   font-size: medium;
+}
+
+.videoBack{
+  border-radius: 10px;
+  width: 800px;
+  background-position: 20px;
+  background-color: black;
+
 }

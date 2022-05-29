@@ -2,6 +2,7 @@ import "./leftsidebar.css"
 import {Save} from "@material-ui/icons";
 import {Home} from "@material-ui/icons";
 import {ViewColumn} from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function Leftsidebar() {
     return (
@@ -10,7 +11,9 @@ export default function Leftsidebar() {
                 <div className="leftsidebarList">
                 <div className="leftsidebarListItem">
                         <Home className="leftsidebarIcon"/>
+                        <Link to="/" style={{ textDecoration: "none"  }}>
                     <span className="leftsidebarListItemText">Home</span>
+                    </Link>
                   </div>
                     <div className="leftsidebarListItem">
                         <Save className="leftsidebarIcon"/>
