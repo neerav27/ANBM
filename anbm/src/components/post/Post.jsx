@@ -8,6 +8,8 @@ import {
   Share,
   MusicVideo,
   PowerSettingsNew,
+  Favorite,
+  Info,
 } from "@material-ui/icons";
 import { useState, useEffect, useContext } from "react";
 import { format } from "timeago.js";
@@ -77,49 +79,57 @@ export default function Post({ post }) {
               <span className="postUsername">{user.username}</span>
               <span className="postDate"> {format(post.createdAt)}</span>
             </div>
-            <div className="postLeftTopRight">
-              <MoreVert />
-            </div>
+            
           </div>
-          <div className="postLeftCenter">
-            <span className="postText">{post?.desc}</span>
-          </div>
+          
           <div className="postLeftBottom">
             <div className="play">
               
             </div>
             <div className="video">
-              <ReactPlayer url={post?.img} controls={true} />
+              
+               <ReactPlayer url={post?.img} controls={true} /> 
             </div>
+          </div>
+          <div className="postLeftCenter">
+            <span className="postText">{post?.desc}</span>
           </div>
         </div>
         <div className="postRight">
+          
           <div className="postRightBottom">
             <div className="interactButton">
-              <ThumbUp style={{ fontSize: 25 }} onClick={likeHandler} />
-              <span className="interactButtonText">Like</span>
+              <ThumbUp style={{ fontSize: 30 }} onClick={likeHandler} />
+              <span className="interactButtonText"></span>
               <span className="postLikeCounter">{like}</span>
             </div>
             <div className="interactButton">
-              <ThumbDown style={{ fontSize: 25 }} onClick={dislikeHandler} />
-              <span className="interactButtonText">Dislike</span>
+              <ThumbDown style={{ fontSize: 30 }} onClick={dislikeHandler} />
+              <span className="interactButtonText"></span>
               <span className="postDislikeCounter">{dislike}</span>
             </div>
             <div className="interactButton">
-              <Comment style={{ fontSize: 25 }} />
-              <span className="interactButtonText">Comment</span>
+              <Comment style={{ fontSize: 30 }} />
+              <span className="interactButtonText"></span>
               <span className="postCommentCounter">{post.comment}</span>
             </div>
             <div className="interactButton">
-              <Save style={{ fontSize: 25 }} />
-              <span className="interactButtonText">Save</span>
+              <Favorite style={{ fontSize: 30 }} />
+              <span className="interactButtonText"></span>
             </div>
             <div className="interactButton">
-              <Share style={{ fontSize: 25 }} />
-              <span className="interactButtonText">Share</span>
+              <Share style={{ fontSize: 30 }} />
+              <span className="interactButtonText"></span>
+            </div>
+            <div className="interactButton">
+              <Info style={{ fontSize: 27 }} />
+              <span className="interactButtonText"></span>
             </div>
           </div>
         </div>
+        <div className="postLeftTopRight">
+              <MoreVert />
+            </div>
       </div>
     </div>
   );

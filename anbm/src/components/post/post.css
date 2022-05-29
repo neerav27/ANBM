@@ -10,23 +10,27 @@
     rgb(47, 253, 47),
     rgb(71, 157, 214)
   );
+
 }
 .postWrapper {
-  padding: 20px;
+  padding: 10px;
   display: flex;
 }
 .postRight {
   display: flex;
-  flex: 3;
+  flex: 2;
   flex-direction: column;
   align-items: center;
-  margin-right: 50px;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 4%;
+  
 }
 .postRightBottom {
   display: block;
   width: 100%;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .albumImg {
   width: 400px;
@@ -69,41 +73,66 @@
   cursor: pointer;
 }
 .postUsername {
-  font-size: 15px;
+  font-size: large;
   font-weight: 500;
   margin: 10px;
   cursor: pointer;
+  font-style: bold;
 }
 .postDate {
-  font-size: 12px;
+  font-size: 11px;
+  font-style: italic;
+  margin-left: 2%;
+  margin-top: 3%;
 }
-.postLeftCenter {
-  display: flex;
-  padding: 10px;
-  background-color: white;
-  border-radius: 30px;
-  width: 97%;
-  max-height: 60%;
-  margin-top: 10px;
-}
+
 .postLeftBottom {
   display: flex;
-  align-items: center;
+  align-items:center;
+  height: 100%;
+  width: 100%;
 }
 .video {
-  display: flex;
-  align-self: center;
-  margin-right: 50%;
-  margin-top: 2%;
+  display:inline;
+  margin-left: 25%;
+  margin-top: 0%;
+  border-radius: 0;
+  width: 100%;
+  background-color: black;
+  
 }
 .playImg {
   width: 250px;
   height: 350px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
   cursor: pointer;
 }
 .songLink {
   margin: 25px;
   margin-left: 20px;
+}
+
+.postText{
+  text-align:justify;
+  font-size: 13px ;
+}
+.postLeftCenter {
+  display: flex;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.935);
+  border-radius: 10px;
+  width:100%;
+  max-width: 100%;
+  max-height: 60%;
+  margin-top: 10px;
+  margin-left: 10%;
+  cursor:default;
+}
+
+.postLikeCounter{
+  font-size: medium;
+}
+.postDislikeCounter{
+  font-size: medium;
 }
