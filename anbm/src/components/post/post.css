@@ -3,7 +3,7 @@
   border-radius: 10px;
   box-shadow: 13px -12px 14px -10px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 13px -12px 14px -10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 13px -12px 14px -10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 13px -12px 14px -10px #00000080;
   margin: 30px 0;
   background-image: linear-gradient(
     to right,
@@ -115,6 +115,7 @@
   padding-top: .5%;
   padding-bottom: .5%;
   border-radius: 10px;
+  
   
 }
 .playImg {
