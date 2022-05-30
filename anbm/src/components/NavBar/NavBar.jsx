@@ -4,32 +4,21 @@ import {
   Person,
   Chat,
   Notifications,
-  Navigation,
+  GetApp,
 } from "@material-ui/icons";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import Popup from "../Popup";
 
-import {
-  PermMedia,
-  Label,
-  Room,
-  EmojiEmotions,
-  Cancel,
-  Notes,
-  MusicNote,
-  LibraryMusic,
-  LeakAdd,
-} from "@material-ui/icons";
+import { MusicNote, LibraryMusic, LeakAdd } from "@material-ui/icons";
 import { axiosInstance } from "../../config";
 
 export default function NavBar() {
   const [user, setUser] = useState({});
   let navigate = useNavigate();
-  const handleClick = (e) => {
-    e.preventDefault();
-    localStorage.clear("user");
+  const handleClick = () => {
+    localStorage.removeItem("user");
   };
   const { user: currentUser } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -50,18 +39,17 @@ export default function NavBar() {
     try {
       await axiosInstance.post("/posts", newPost);
       window.location.reload();
-    } catch (err) { }
+    } catch (err) {}
   };
+
   const searchHandler = () => {
-    console.log(user);
-    console.log(friendID.current.value);
     const fetchUser = async () => {
-      console.log(user);
       const res = await axiosInstance.get(
         `/users?userId=${friendID.current.value}`
       );
-      setUser(res.data);
-      console.log(user);
+      navigate(`/profile/${res.data.username}`);
+      //setUser(res.data);
+      //console.log(user);
     };
     fetchUser();
   };
@@ -81,9 +69,9 @@ export default function NavBar() {
             ref={friendID}
           />
           <div className="searchBox">
-            <Link to={`/profile/${user.username}`}>
-              <button className="searchParty" onClick={searchHandler}>Search</button>
-            </Link>
+            <button className="searchParty" onClick={searchHandler}>
+              Search
+            </button>
           </div>
           <ul className="list"></ul>
         </div>
@@ -114,8 +102,6 @@ export default function NavBar() {
                   className="shareInput"
                   ref={desc}
                 />
-
-
               </div>
               <form className="shareBottom" onSubmit={submitHandler}>
                 <li className="shareOptions">
@@ -145,7 +131,6 @@ export default function NavBar() {
                         ref={url}
                       />
                     </main>
-
                   </li>
                 </li>
                 <button className="shareButton" type="submit">
@@ -155,8 +140,8 @@ export default function NavBar() {
             </Popup>
           </span>
 
-          <form className="logoutBox" onSubmit={handleClick}>
-            <span className="logoutButton" type="submit">
+          <form className="logoutBox">
+            <span className="logoutButton" onClick={handleClick}>
               <a href="/login" style={{ textDecoration: "none" }}>
                 Logout
               </a>
