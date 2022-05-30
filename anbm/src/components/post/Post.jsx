@@ -24,7 +24,6 @@ export default function Post({ post }) {
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
   const { user: currentUser } = useContext(AuthContext);
-
   const likeHandler = () => {
     try {
       axiosInstance.put("/posts/" + post._id + "/like", {
@@ -80,15 +79,12 @@ export default function Post({ post }) {
               <span className="postUsername">{user.username}</span>
               <span className="postDate"> {format(post.createdAt)}</span>
             </div>
-            
           </div>
-          
+
           <div className="postLeftBottom">
-            <div className="play">
-              
-            </div>
+            <div className="play"></div>
             <div className="video">
-               <ReactPlayer url={post?.img} controls={true} /> 
+              <ReactPlayer url={post?.img} controls={true} />
             </div>
           </div>
           <div className="postLeftCenter">
@@ -96,7 +92,6 @@ export default function Post({ post }) {
           </div>
         </div>
         <div className="postRight">
-          
           <div className="postRightBottom">
             <div className="interactButton">
               <ThumbUp style={{ fontSize: 30 }} onClick={likeHandler} />
@@ -128,8 +123,8 @@ export default function Post({ post }) {
           </div>
         </div>
         <div className="postLeftTopRight">
-              <MoreVert />
-            </div>
+          <MoreVert />
+        </div>
       </div>
     </div>
   );
